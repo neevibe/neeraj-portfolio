@@ -227,7 +227,7 @@ const CONFIG = {
     {title: "Data & Digital Transformation", desc: "From predictive models and automated BI at Amazon to SaaS analytics adoption for 3,000+ enterprise users at Bidgely — grounded in IIT Ropar AI and IIM Visakhapatnam product strategy."}
   ],
   projects: [
-    {tag: "SaaS / Product", title: "Xyrenis", pitch: "Project tracking tool built end-to-end — a single source of truth from backlog to launch, designed for teams that ship."},
+    {tag: "SaaS / Product", title: "Xyrenis", pitch: "AI that predicts customer churn before it happens — predict, explain, prevent. Cinematic landing page built end-to-end.", url: "/xyrenis/"},
     {tag: "AI / Simulation", title: "Duty Free Digital Twin", pitch: "Digital twin of airport duty-free operations — simulating demand, pricing and passenger flow so commercial decisions are tested before they hit the floor."},
     {tag: "Analytics", title: "Retail Analytics", pitch: "Passenger profile-based retail targeting engine and real-time revenue dashboard suite across duty-free, retail and F&B."}
   ],
@@ -256,9 +256,12 @@ document.getElementById('statsGrid').innerHTML = CONFIG.stats.map(s =>
 document.getElementById('pillarsList').innerHTML = CONFIG.pillars.map((p,i) =>
   `<div class="pillar"><div class="idx">0${i+1}</div><h3>${p.title}</h3><p>${p.desc}</p></div>`
 ).join('');
-document.getElementById('cards').innerHTML = CONFIG.projects.map(p =>
-  `<div class="card"><div><div class="tag">${p.tag}</div><h3>${p.title}</h3><p>${p.pitch}</p></div><div class="arrow">&rarr;</div></div>`
-).join('');
+document.getElementById('cards').innerHTML = CONFIG.projects.map(p => {
+  const inner = `<div><div class="tag">${p.tag}</div><h3>${p.title}</h3><p>${p.pitch}</p></div><div class="arrow">${p.url ? 'View live &rarr;' : '&rarr;'}</div>`;
+  return p.url
+    ? `<a class="card" href="${p.url}" style="text-decoration:none;color:inherit">${inner}</a>`
+    : `<div class="card">${inner}</div>`;
+}).join('');
 document.getElementById('finaleSub').textContent = CONFIG.finaleSub;
 document.getElementById('btnHire').href = `mailto:${CONFIG.email}?subject=Hiring%20inquiry`;
 document.getElementById('btnCall').href = CONFIG.bookCallUrl;
