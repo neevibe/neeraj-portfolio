@@ -3,347 +3,635 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Neeraj Prakash — AI Product Manager</title>
+<title>Neeraj Prakash — Senior AI Product Manager · Enterprise AI Builder</title>
+<meta name="description" content="Senior AI Product Manager building AI products that move millions of passengers and hundreds of crores. 11+ years across Airports, Retail, BFSI, Energy and E-commerce.">
+<link rel="canonical" href="https://neeraj-portfolio-brown.vercel.app/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Neeraj Prakash — Senior AI Product Manager">
+<meta property="og:description" content="Building AI products that transform how enterprises make decisions. ₹500Cr+ commercial decisions enabled, 3000+ enterprise users, 35% faster decision making.">
+<meta property="og:image" content="https://neeraj-portfolio-brown.vercel.app/assets/hero.jpg">
+<meta property="og:url" content="https://neeraj-portfolio-brown.vercel.app/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Neeraj Prakash — Senior AI Product Manager">
+<meta name="twitter:description" content="Building AI products that move millions of passengers and hundreds of crores.">
+<meta name="twitter:image" content="https://neeraj-portfolio-brown.vercel.app/assets/hero.jpg">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Neeraj Prakash","jobTitle":"Senior AI Product & Analytics Manager","worksFor":{"@type":"Organization","name":"Bangalore International Airport Ltd"},"alumniOf":[{"@type":"CollegeOrUniversity","name":"IIM Visakhapatnam"},{"@type":"CollegeOrUniversity","name":"IIT Ropar"}],"url":"https://neeraj-portfolio-brown.vercel.app/","sameAs":["https://www.linkedin.com/in/neerajprakash27"],"knowsAbout":["AI Product Management","Commercial Analytics","Digital Transformation","Enterprise AI"]}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/hero.jpg">
 <style>
-/* ============ EDIT YOUR CONTENT IN THE CONFIG SCRIPT AT THE BOTTOM ============ */
 :root{
   --bg:#0D0C0B; --accent:#E1502A; --cream:#ECE6D8;
+  --mut:rgba(236,230,216,.6); --mut2:rgba(236,230,216,.4); --line:rgba(236,230,216,.1);
   --display:'Anton',sans-serif; --body:'Space Grotesk',sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:auto}
+html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--cream);font-family:var(--body);overflow-x:hidden}
 ::selection{background:var(--accent);color:var(--bg)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1320px;margin:0 auto;padding:0 6vw}
+.kicker{font-size:12px;letter-spacing:.35em;text-transform:uppercase;color:var(--accent);margin-bottom:20px}
+h2.sec{font-family:var(--display);text-transform:uppercase;color:var(--cream);line-height:.95;font-size:clamp(40px,6.4vw,96px)}
+.reveal{opacity:0;transform:translateY(46px)}
 
-/* grain */
-.grain{position:fixed;inset:-100%;width:300%;height:300%;pointer-events:none;z-index:9999;opacity:.07;
+/* loader */
+#loader{position:fixed;inset:0;background:var(--bg);z-index:2000;display:flex;align-items:center;justify-content:center}
+#loader .nm{font-family:var(--display);font-size:clamp(26px,4vw,44px);letter-spacing:.06em;color:var(--cream);overflow:hidden}
+#loader .nm span{display:inline-block;transform:translateY(110%)}
+#loader .ln{position:absolute;bottom:0;left:0;height:3px;background:var(--accent);width:0}
+@media (prefers-reduced-motion:reduce){#loader{display:none}.reveal{opacity:1;transform:none}}
+
+/* grain + progress */
+.grain{position:fixed;inset:-100%;width:300%;height:300%;pointer-events:none;z-index:1500;opacity:.06;
   background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   animation:grain 8s steps(10) infinite}
-@keyframes grain{
-  0%,100%{transform:translate(0,0)}10%{transform:translate(-5%,-10%)}20%{transform:translate(-15%,5%)}
-  30%{transform:translate(7%,-25%)}40%{transform:translate(-5%,25%)}50%{transform:translate(-15%,10%)}
-  60%{transform:translate(15%,0)}70%{transform:translate(0,15%)}80%{transform:translate(3%,35%)}90%{transform:translate(-10%,10%)}
-}
-
-/* progress bar */
+@keyframes grain{0%,100%{transform:translate(0,0)}10%{transform:translate(-5%,-10%)}20%{transform:translate(-15%,5%)}30%{transform:translate(7%,-25%)}40%{transform:translate(-5%,25%)}50%{transform:translate(-15%,10%)}60%{transform:translate(15%,0)}70%{transform:translate(0,15%)}80%{transform:translate(3%,35%)}90%{transform:translate(-10%,10%)}}
 .progress{position:fixed;top:0;left:0;height:3px;background:var(--accent);width:0;z-index:1000}
 
 /* nav */
-nav{position:fixed;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;
-  padding:22px 40px;z-index:900;mix-blend-mode:difference}
+nav{position:fixed;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:22px 40px;z-index:900;mix-blend-mode:difference}
 nav .logo{font-family:var(--display);font-size:20px;letter-spacing:.05em;color:var(--cream);text-decoration:none}
-nav a.cta{font-size:13px;letter-spacing:.15em;text-transform:uppercase;color:var(--cream);text-decoration:none;
-  border:1px solid rgba(236,230,216,.4);padding:10px 22px;border-radius:100px;transition:.3s}
-nav a.cta:hover{background:var(--cream);color:#000}
+nav .links{display:flex;gap:26px;align-items:center}
+nav .links a{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--cream);text-decoration:none;opacity:.75;transition:.3s}
+nav .links a:hover{opacity:1;color:var(--accent)}
+nav a.cta{border:1px solid rgba(236,230,216,.4);padding:10px 22px;border-radius:100px;opacity:1}
+nav a.cta:hover{background:var(--cream);color:#000!important}
+@media(max-width:900px){nav .links a:not(.cta){display:none}}
 
-/* ============ HERO ============ */
+/* hero */
 .hero{height:300vh;position:relative}
-.hero-pin{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;align-items:center;justify-content:center}
-.hero-stage{position:absolute;inset:0;perspective:1200px;display:flex;align-items:center;justify-content:center}
+.hero-pin{position:sticky;top:0;height:100vh;overflow:hidden}
 .hero-img-wrap{position:absolute;inset:0;will-change:transform;transform-style:preserve-3d}
-.hero-img-wrap img{width:100%;height:100%;object-fit:cover;object-position:center 20%;filter:contrast(1.08) saturate(1.05)}
-.hero-vignette{position:absolute;inset:0;background:
-  radial-gradient(ellipse 70% 60% at 50% 45%,transparent 30%,rgba(13,12,11,.85) 90%),
-  linear-gradient(to bottom,rgba(13,12,11,.5),transparent 25%,transparent 70%,var(--bg))}
+.hero-img-wrap img{width:100%;height:100%;object-fit:cover;object-position:center 15%;filter:contrast(1.08) saturate(1.05)}
+.hero-vignette{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 45%,transparent 30%,rgba(13,12,11,.85) 90%),linear-gradient(to bottom,rgba(13,12,11,.5),transparent 25%,transparent 62%,var(--bg))}
 .hero-sweep{position:absolute;inset:0;background:radial-gradient(ellipse 40% 80% at var(--sx,20%) 50%,rgba(225,80,42,.18),transparent 60%);mix-blend-mode:screen}
-.hero-fallback{position:absolute;inset:0;background:
-  radial-gradient(ellipse 45% 70% at 50% 55%,rgba(225,80,42,.25),transparent 65%),
-  radial-gradient(ellipse 30% 55% at 50% 60%,rgba(225,80,42,.35),transparent 70%),#0D0C0B;display:none}
-.hero-title{position:absolute;z-index:5;left:6vw;bottom:14vh;text-align:left;pointer-events:none;max-width:60vw}
+.hero-title{position:absolute;z-index:5;left:6vw;bottom:9vh;max-width:72vw}
 .hero-kicker{font-size:11px;letter-spacing:.35em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;opacity:0}
-.hero-title h1{font-family:var(--display);font-size:clamp(34px,5.2vw,84px);line-height:.98;letter-spacing:.02em;
-  color:var(--cream);text-transform:uppercase;text-shadow:0 2px 30px rgba(13,12,11,.8)}
-.hero-title h1 .ln{display:inline-block;overflow:hidden;margin-right:.35em}
-.hero-title h1 .ch{display:inline-block;transform:translateY(110%);will-change:transform}
-.hero-sub{margin-top:14px;font-size:clamp(13px,1.3vw,17px);font-weight:300;letter-spacing:.06em;color:rgba(236,230,216,.8);opacity:0;max-width:520px;line-height:1.6}
-.hero-sub .accent{color:var(--accent);font-weight:500}
-.scroll-hint{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);z-index:6;font-size:11px;
-  letter-spacing:.3em;text-transform:uppercase;color:rgba(236,230,216,.5);display:flex;flex-direction:column;align-items:center;gap:10px}
+.hero-title h1{font-family:var(--display);font-size:clamp(28px,4.1vw,66px);line-height:1.04;letter-spacing:.02em;color:var(--cream);text-transform:uppercase;text-shadow:0 2px 30px rgba(13,12,11,.8)}
+.hero-title h1 .ln{display:block;overflow:hidden}
+.hero-title h1 .ch{display:inline-block;transform:translateY(110%);will-change:transform;white-space:pre}
+.hero-title h1 .hl{color:var(--accent)}
+.hero-sub{margin-top:16px;font-size:clamp(13px,1.3vw,17px);font-weight:300;letter-spacing:.04em;color:var(--mut);opacity:0;max-width:560px;line-height:1.65}
+.hero-cos{margin-top:22px;display:flex;gap:26px;flex-wrap:wrap;opacity:0}
+.hero-cos span{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut2);font-weight:500}
+.scroll-hint{position:absolute;bottom:36px;right:6vw;z-index:6;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:rgba(236,230,216,.5);display:flex;flex-direction:column;align-items:center;gap:10px}
 .scroll-hint::after{content:'';width:1px;height:44px;background:linear-gradient(var(--accent),transparent);animation:drop 1.8s ease-in-out infinite}
 @keyframes drop{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
 
-/* ============ STATS ============ */
-.stats{padding:16vh 6vw;border-top:1px solid rgba(236,230,216,.08)}
-.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;max-width:1400px;margin:0 auto}
-.stat{border-left:2px solid var(--accent);padding-left:24px}
-.stat .num{font-family:var(--display);font-size:clamp(56px,7vw,110px);line-height:1;color:var(--cream)}
-.stat .num sup{font-size:.4em;color:var(--accent);top:-0.9em}
-.stat .lbl{margin-top:10px;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:rgba(236,230,216,.55)}
+/* metrics */
+.stats{padding:15vh 0;border-top:1px solid var(--line)}
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:38px}
+.stat{border-left:2px solid var(--accent);padding-left:22px}
+.stat .num{font-family:var(--display);font-size:clamp(42px,4.6vw,78px);line-height:1;color:var(--cream)}
+.stat .num sup{font-size:.42em;color:var(--accent);top:-.9em}
+.stat .lbl{margin-top:10px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--mut2)}
 
-/* ============ SECTION SHARED ============ */
-.kicker{font-size:12px;letter-spacing:.35em;text-transform:uppercase;color:var(--accent);margin-bottom:20px}
-.big{font-family:var(--display);text-transform:uppercase;color:var(--cream);line-height:.95}
+/* products */
+.products{padding:14vh 0}
+.pcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:26px;margin-top:8vh}
+.pcard{border:1px solid var(--line);border-radius:10px;padding:40px 34px;background:rgba(236,230,216,.02);display:flex;flex-direction:column;position:relative;overflow:hidden;
+  transition:transform .5s cubic-bezier(.2,.8,.2,1),border-color .4s,box-shadow .5s}
+.pcard::before{content:'';position:absolute;inset:0;background:radial-gradient(560px circle at var(--mx,50%) var(--my,50%),rgba(225,80,42,.11),transparent 45%);opacity:0;transition:opacity .4s;pointer-events:none}
+.pcard:hover{transform:translateY(-8px);border-color:rgba(225,80,42,.55);box-shadow:0 30px 60px -22px rgba(225,80,42,.22)}
+.pcard:hover::before{opacity:1}
+.pcard .tag{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent)}
+.pcard h3{font-family:var(--display);font-size:clamp(26px,2.4vw,38px);text-transform:uppercase;margin:16px 0 4px}
+.pcard .sub{font-size:13px;color:var(--mut2);letter-spacing:.05em;margin-bottom:20px}
+.pcard dl{font-size:14px;line-height:1.55;font-weight:300;flex:1}
+.pcard dt{color:var(--accent);font-size:11px;letter-spacing:.2em;text-transform:uppercase;margin-top:14px;font-weight:500}
+.pcard dd{color:var(--mut);margin-top:4px}
+.pcard .meta{display:flex;gap:18px;margin:20px 0 24px;font-size:12px;color:var(--mut2);letter-spacing:.06em;flex-wrap:wrap}
+.pcard .cs-btn{align-self:flex-start;background:none;border:1px solid rgba(236,230,216,.3);color:var(--cream);font-family:var(--body);font-size:13px;letter-spacing:.12em;text-transform:uppercase;padding:13px 26px;border-radius:100px;cursor:pointer;transition:.3s}
+.pcard .cs-btn:hover{border-color:var(--accent);color:var(--accent)}
 
-/* ============ PILLARS ============ */
-.pillars{position:relative;min-height:100vh;padding:18vh 6vw;overflow:hidden}
-.pillars-bg{position:absolute;inset:0;z-index:0}
-.pillars-bg img{width:100%;height:120%;object-fit:cover;opacity:.35;filter:saturate(1.1);will-change:transform}
-.pillars-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,var(--bg),rgba(13,12,11,.55) 30%,rgba(13,12,11,.55) 70%,var(--bg))}
-.pillars-inner{position:relative;z-index:2;max-width:1400px;margin:0 auto}
-.pillars h2{font-size:clamp(44px,7vw,110px);margin-bottom:10vh}
-.pillar{border-top:1px solid rgba(236,230,216,.15);padding:48px 0;display:grid;grid-template-columns:80px 1fr 2fr;gap:32px;align-items:baseline;opacity:0;transform:translateY(60px)}
-.pillar .idx{font-family:var(--display);font-size:22px;color:var(--accent)}
-.pillar h3{font-family:var(--display);font-size:clamp(28px,3.6vw,54px);text-transform:uppercase;letter-spacing:.02em}
-.pillar p{font-size:16px;font-weight:300;line-height:1.7;color:rgba(236,230,216,.7);max-width:560px}
+/* case study overlay */
+#csOverlay{position:fixed;inset:0;z-index:1200;background:rgba(13,12,11,.55);backdrop-filter:blur(8px);display:none;align-items:stretch;justify-content:flex-end}
+#csOverlay.on{display:flex}
+#csPanel{width:min(760px,100%);background:#131211;border-left:1px solid var(--line);height:100%;overflow-y:auto;padding:70px 56px;transform:translateX(100%)}
+#csPanel .close{position:sticky;top:0;float:right;background:none;border:1px solid rgba(236,230,216,.3);color:var(--cream);width:44px;height:44px;border-radius:50%;font-size:18px;cursor:pointer;transition:.3s}
+#csPanel .close:hover{border-color:var(--accent);color:var(--accent);transform:rotate(90deg)}
+#csPanel .tag{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent)}
+#csPanel h3{font-family:var(--display);font-size:clamp(34px,4vw,54px);text-transform:uppercase;margin:14px 0 6px}
+#csPanel .sub{color:var(--mut2);font-size:14px;margin-bottom:8px}
+#csPanel .meta{display:flex;gap:20px;margin:16px 0 20px;font-size:12px;color:var(--mut2);letter-spacing:.06em;flex-wrap:wrap}
+#csPanel .shot{border:1px solid var(--line);border-radius:10px;margin:20px 0 30px;padding:0;overflow:hidden;background:#0A0908}
+#csPanel .shot svg{display:block;width:100%;height:auto}
+#csPanel h4{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);margin:34px 0 10px}
+#csPanel p{font-size:15.5px;line-height:1.75;font-weight:300;color:var(--mut)}
+#csPanel .mrow{display:flex;gap:34px;flex-wrap:wrap;margin-top:8px}
+#csPanel .mrow .m .v{font-family:var(--display);font-size:34px;color:var(--cream)}
+#csPanel .mrow .m .k{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut2);margin-top:4px}
 
-/* ============ WORK ============ */
-.work{position:relative;padding:18vh 6vw;background:
-  linear-gradient(rgba(13,12,11,.92),rgba(13,12,11,.92)),
-  repeating-linear-gradient(90deg,rgba(225,80,42,.06) 0 1px,transparent 1px 120px)}
-.work-inner{max-width:1400px;margin:0 auto}
-.work h2{font-size:clamp(44px,7vw,110px);margin-bottom:10vh}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px}
-.card{position:relative;border:1px solid rgba(236,230,216,.12);border-radius:6px;padding:44px 36px;min-height:380px;
-  display:flex;flex-direction:column;justify-content:space-between;background:rgba(236,230,216,.02);
-  transition:transform .5s cubic-bezier(.2,.8,.2,1),border-color .4s,box-shadow .5s;overflow:hidden;opacity:0;transform:translateY(80px)}
-.card::before{content:'';position:absolute;inset:0;background:radial-gradient(600px circle at var(--mx,50%) var(--my,50%),rgba(225,80,42,.12),transparent 45%);opacity:0;transition:opacity .4s}
-.card:hover{transform:translateY(-10px) rotate(-.5deg);border-color:rgba(225,80,42,.6);box-shadow:0 30px 60px -20px rgba(225,80,42,.25)}
-.card:hover::before{opacity:1}
-.card .tag{font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--accent)}
-.card h3{font-family:var(--display);font-size:clamp(26px,2.6vw,40px);text-transform:uppercase;margin:18px 0 14px}
-.card p{font-size:15px;font-weight:300;line-height:1.65;color:rgba(236,230,216,.7)}
-.card .arrow{align-self:flex-end;font-size:28px;color:var(--accent);transform:translateX(0);transition:transform .4s}
-.card:hover .arrow{transform:translateX(10px)}
+/* timeline */
+.timeline{padding:16vh 0;border-top:1px solid var(--line)}
+.tl{margin-top:9vh;position:relative;padding-left:40px}
+.tl::before{content:'';position:absolute;left:8px;top:0;bottom:0;width:1px;background:var(--line)}
+#tlFill{position:absolute;left:8px;top:0;width:1px;height:0;background:var(--accent)}
+.tstep{position:relative;padding:0 0 9vh}
+.tstep .dot{position:absolute;left:-38px;top:8px;width:13px;height:13px;border-radius:50%;border:2px solid var(--accent);background:var(--bg)}
+.tstep .yr{font-size:12px;letter-spacing:.24em;color:var(--accent);text-transform:uppercase}
+.tstep h3{font-family:var(--display);font-size:clamp(26px,3.4vw,52px);text-transform:uppercase;margin:8px 0 8px}
+.tstep p{max-width:560px;color:var(--mut);font-weight:300;font-size:15px;line-height:1.7}
 
-/* ============ FINALE ============ */
-.finale{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:14vh 6vw;position:relative;overflow:hidden}
-.finale::before{content:'';position:absolute;width:120vw;height:120vw;border-radius:50%;
-  background:radial-gradient(circle,rgba(225,80,42,.12),transparent 55%);pointer-events:none}
-.finale h2{font-size:clamp(52px,10vw,160px);position:relative;z-index:2}
-.finale h2 .hollow{color:transparent;-webkit-text-stroke:2px var(--accent)}
-.finale p{margin:32px 0 48px;font-weight:300;font-size:18px;color:rgba(236,230,216,.7);position:relative;z-index:2}
-.btns{display:flex;gap:20px;flex-wrap:wrap;justify-content:center;position:relative;z-index:2}
-.btn{font-family:var(--body);font-size:14px;letter-spacing:.15em;text-transform:uppercase;text-decoration:none;
-  padding:20px 48px;border-radius:100px;transition:.35s}
-.btn.solid{background:var(--accent);color:var(--bg);font-weight:700}
-.btn.solid:hover{transform:scale(1.05);box-shadow:0 10px 40px rgba(225,80,42,.45)}
+/* why me */
+.why{padding:14vh 0;border-top:1px solid var(--line)}
+.wgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;margin-top:8vh}
+.wcard{border:1px solid var(--line);border-radius:10px;padding:30px 26px;background:rgba(236,230,216,.02);transition:.35s}
+.wcard:hover{border-color:rgba(225,80,42,.5);transform:translateY(-4px)}
+.wcard h3{font-family:var(--display);font-size:19px;text-transform:uppercase;letter-spacing:.04em;margin-bottom:10px}
+.wcard p{font-size:13.5px;color:var(--mut);font-weight:300;line-height:1.65}
+
+/* philosophy */
+.philosophy{padding:20vh 0;text-align:center;position:relative;overflow:hidden}
+.philosophy::before{content:'';position:absolute;width:90vw;height:90vw;border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(225,80,42,.08),transparent 60%)}
+.philosophy .line{font-family:var(--display);text-transform:uppercase;font-size:clamp(30px,5vw,72px);line-height:1.15;color:var(--mut2);position:relative;z-index:2;transition:color .5s}
+.philosophy .line em{font-style:normal;color:var(--cream)}
+.philosophy .line .a{color:var(--accent)}
+.philosophy .gap{height:7vh}
+
+/* trusted */
+.trusted{padding:13vh 0;border-top:1px solid var(--line)}
+.torgs{display:flex;gap:44px;flex-wrap:wrap;margin-top:7vh;align-items:center}
+.torgs span{font-family:var(--display);font-size:19px;letter-spacing:.08em;color:rgba(236,230,216,.4);transition:.3s;text-transform:uppercase}
+.torgs span:hover{color:var(--cream)}
+.certs{display:flex;gap:14px;flex-wrap:wrap;margin-top:6vh}
+.cert{border:1px solid var(--line);border-radius:100px;padding:11px 22px;font-size:12.5px;letter-spacing:.1em;color:var(--mut);text-transform:uppercase}
+
+/* thoughts */
+.thoughts{padding:14vh 0;border-top:1px solid var(--line)}
+.tcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:8vh}
+.tcard{border:1px solid var(--line);border-radius:10px;padding:32px 28px;text-decoration:none;color:inherit;display:block;background:rgba(236,230,216,.02);transition:.35s}
+.tcard:hover{border-color:rgba(225,80,42,.5);transform:translateY(-4px)}
+.tcard .cat{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
+.tcard h3{font-family:var(--display);font-size:21px;text-transform:uppercase;margin:14px 0 10px;line-height:1.15}
+.tcard p{font-size:13.5px;color:var(--mut);font-weight:300;line-height:1.65}
+.tcard .rd{margin-top:18px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut2)}
+
+/* testimonials */
+.testi{padding:14vh 0;border-top:1px solid var(--line)}
+.tsgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;margin-top:8vh}
+.ts{border:1px solid var(--line);border-radius:12px;padding:36px 32px;background:rgba(236,230,216,.02)}
+.ts .q{font-size:16px;line-height:1.7;font-weight:300;color:var(--cream)}
+.ts .q::before{content:'“';color:var(--accent);font-family:var(--display);font-size:34px;line-height:0;vertical-align:-8px;margin-right:4px}
+.ts .who{margin-top:22px;font-size:13px;color:var(--mut2);letter-spacing:.06em}
+.ts .who b{color:var(--mut);font-weight:500}
+
+/* contact */
+.contact{padding:18vh 0 14vh;text-align:center;position:relative;overflow:hidden}
+.contact::before{content:'';position:absolute;width:120vw;height:120vw;border-radius:50%;left:50%;top:10%;background:radial-gradient(circle,rgba(225,80,42,.1),transparent 55%);transform:translateX(-50%)}
+.contact h2{font-size:clamp(40px,7.5vw,110px);position:relative;z-index:2}
+.contact h2 .hollow{color:transparent;-webkit-text-stroke:2px var(--accent)}
+.contact p{margin:28px 0 46px;color:var(--mut);font-weight:300;font-size:17px;position:relative;z-index:2}
+.btns{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;position:relative;z-index:2}
+.btn{font-family:var(--body);font-size:13.5px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;padding:18px 40px;border-radius:100px;transition:.35s;display:inline-block}
+.btn.solid{background:var(--accent);color:var(--bg);font-weight:600}
+.btn.solid:hover{box-shadow:0 10px 40px rgba(225,80,42,.45)}
 .btn.ghost{border:1px solid rgba(236,230,216,.35);color:var(--cream)}
 .btn.ghost:hover{border-color:var(--accent);color:var(--accent)}
 
-footer{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;
-  padding:40px 6vw;border-top:1px solid rgba(236,230,216,.08);font-size:13px;color:rgba(236,230,216,.45)}
-footer .socials{display:flex;gap:28px}
-footer a{color:rgba(236,230,216,.65);text-decoration:none;letter-spacing:.12em;text-transform:uppercase;font-size:12px;transition:.3s}
-footer a:hover{color:var(--accent)}
-
-@media(max-width:768px){
-  .pillar{grid-template-columns:1fr;gap:10px}
-  nav{padding:18px 20px}
-}
+footer{border-top:1px solid var(--line);padding:52px 0}
+footer .cols{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:flex-start}
+footer .brand{font-family:var(--display);font-size:22px}
+footer nav.f{display:flex;gap:24px;flex-wrap:wrap;position:static;mix-blend-mode:normal;padding:0}
+footer nav.f a{font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut2);text-decoration:none;transition:.25s}
+footer nav.f a:hover{color:var(--accent)}
+footer .cp{margin-top:34px;font-size:12px;color:var(--mut2)}
 </style>
 </head>
 <body>
-<div class="grain"></div>
-<div class="progress" id="progress"></div>
+<div id="loader" aria-hidden="true"><div class="nm"><span>NEERAJ&nbsp;PRAKASH</span></div><div class="ln"></div></div>
+<div class="grain" aria-hidden="true"></div>
+<div class="progress" aria-hidden="true"></div>
 
-<nav>
-  <a class="logo" href="#">NP</a>
-  <a class="cta" href="#hire">Book a call</a>
+<nav aria-label="Main">
+  <a class="logo" href="#top">NP</a>
+  <div class="links">
+    <a href="#products">Products</a><a href="#journey">Journey</a><a href="#thoughts">Thoughts</a>
+    <a class="cta" href="#contact">Let's talk</a>
+  </div>
 </nav>
 
 <!-- HERO -->
-<section class="hero" id="hero">
+<header class="hero" id="top">
   <div class="hero-pin">
-    <div class="hero-stage">
-      <div class="hero-fallback" id="heroFallback"></div>
-      <div class="hero-img-wrap" id="heroImgWrap">
-        <img id="heroImg" src="assets/hero.jpg" alt="Neeraj Prakash">
-      </div>
-      <div class="hero-sweep" id="heroSweep"></div>
-      <div class="hero-vignette"></div>
+    <div class="hero-img-wrap" id="heroImgWrap">
+      <img id="heroImg" src="assets/hero.jpg" alt="Neeraj Prakash, Senior AI Product Manager, portrait in navy suit with warm rim lighting" fetchpriority="high">
     </div>
+    <div class="hero-sweep" id="heroSweep" aria-hidden="true"></div>
+    <div class="hero-vignette" aria-hidden="true"></div>
     <div class="hero-title">
-      <div class="hero-kicker" id="heroKicker"></div>
-      <h1 id="heroName"></h1>
-      <div class="hero-sub" id="heroSub"></div>
+      <p class="hero-kicker">Neeraj Prakash — Senior AI Product Manager · Analytics Leader · Enterprise AI Builder</p>
+      <h1 id="heroName" aria-label="Building AI products that move millions of passengers and hundreds of crores."></h1>
+      <p class="hero-sub" id="heroSub">11+ years building AI, Analytics and Enterprise Products across Airports, Retail, BFSI, Energy and E-commerce.</p>
+      <div class="hero-cos" id="heroCos" aria-label="Companies">
+        <span>Bangalore International Airport</span><span>Amazon</span><span>Axis Bank</span><span>Bidgely</span><span>Coforge</span>
+      </div>
     </div>
-    <div class="scroll-hint">Scroll</div>
+    <div class="scroll-hint" aria-hidden="true">Scroll</div>
+  </div>
+</header>
+
+<main>
+<!-- METRICS -->
+<section class="stats" aria-label="Career metrics">
+  <div class="wrap"><div class="stats-grid" id="statsGrid"></div></div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products" id="products">
+  <div class="wrap">
+    <p class="kicker">Featured work</p>
+    <h2 class="sec reveal">Products<br>I've built</h2>
+    <div class="pcards" id="pcards"></div>
   </div>
 </section>
 
-<!-- STATS -->
-<section class="stats">
-  <div class="stats-grid" id="statsGrid"></div>
-</section>
-
-<!-- PILLARS -->
-<section class="pillars">
-  <div class="pillars-bg"><img id="builderImg" src="assets/builder.jpg" alt="" onerror="this.style.display='none'"></div>
-  <div class="pillars-inner">
-    <div class="kicker">What I do</div>
-    <h2 class="big">Three<br>Pillars</h2>
-    <div id="pillarsList"></div>
+<!-- TIMELINE -->
+<section class="timeline" id="journey">
+  <div class="wrap">
+    <p class="kicker">The journey</p>
+    <h2 class="sec reveal">From banking floors<br>to airport AI</h2>
+    <div class="tl" id="tl">
+      <div id="tlFill"></div>
+      <div class="tstep reveal"><span class="dot"></span><span class="yr">2015 — Axis Bank</span><h3>Where I learned the business</h3><p>Running daily operations for one of India's largest private banks taught me what enterprises actually need from technology: trust, speed, and decisions people can defend.</p></div>
+      <div class="tstep reveal"><span class="dot"></span><span class="yr">2017 — Amazon</span><h3>Where I learned scale</h3><p>Predictive models and automated BI for customer retention at e-commerce scale — multi-million-dollar savings, and a permanent allergy to metrics that don't move decisions.</p></div>
+      <div class="tstep reveal"><span class="dot"></span><span class="yr">2021 — Bidgely</span><h3>Where I learned product</h3><p>Embedding AI-driven analytics into a SaaS energy platform used by 3,000+ enterprise users. The lesson: adoption is the product. A model nobody trusts is a model nobody uses.</p></div>
+      <div class="tstep reveal"><span class="dot"></span><span class="yr">2023 — Bangalore International Airport</span><h3>Where it all compounds</h3><p>Leading AI product and commercial analytics for one of the world's best airports — EKO, digital twins, retail intelligence. Millions of passengers, hundreds of crores in commercial decisions.</p></div>
+      <div class="tstep reveal"><span class="dot"></span><span class="yr">Now</span><h3>Building AI products</h3><p>Turning a decade of enterprise scar tissue into AI products that change how organizations decide — not just how they report.</p></div>
+    </div>
   </div>
 </section>
 
-<!-- WORK -->
-<section class="work">
-  <div class="work-inner">
-    <div class="kicker">Selected work</div>
-    <h2 class="big">The Ship</h2>
-    <div class="cards" id="cards"></div>
+<!-- WHY ME -->
+<section class="why">
+  <div class="wrap">
+    <p class="kicker">Why companies hire me</p>
+    <h2 class="sec reveal">Eight things<br>I do well</h2>
+    <div class="wgrid" id="wgrid"></div>
   </div>
 </section>
 
-<!-- FINALE -->
-<section class="finale" id="hire">
-  <h2 class="big">Let's build<br><span class="hollow">something real</span></h2>
-  <p id="finaleSub"></p>
+<!-- PHILOSOPHY -->
+<section class="philosophy" aria-label="Product philosophy">
+  <p class="kicker" style="position:relative;z-index:2">My product philosophy</p>
+  <p class="line reveal">I don't build dashboards.<br><em>I build <span class="a">decisions</span>.</em></p>
+  <div class="gap"></div>
+  <p class="line reveal">I don't chase AI trends.<br><em>I solve <span class="a">business problems</span>.</em></p>
+  <div class="gap"></div>
+  <p class="line reveal">Products should create<br><em><span class="a">measurable outcomes</span> —<br>not impressive demos.</em></p>
+</section>
+
+<!-- TRUSTED -->
+<section class="trusted">
+  <div class="wrap">
+    <p class="kicker">Trusted by</p>
+    <div class="torgs reveal">
+      <span>BIAL</span><span>Amazon</span><span>Axis Bank</span><span>Bidgely</span><span>Coforge</span><span>IIM Visakhapatnam</span><span>IIT Ropar</span>
+    </div>
+    <div class="certs reveal">
+      <span class="cert">Certified ScrumMaster</span><span class="cert">IIM Visakhapatnam — Product Management</span>
+      <span class="cert">IIT Ropar — Artificial Intelligence</span><span class="cert">Microsoft Azure AZ-900</span>
+      <span class="cert">SQL Advanced</span><span class="cert">Data Analysis with Python</span>
+    </div>
+  </div>
+</section>
+
+<!-- THOUGHTS -->
+<section class="thoughts" id="thoughts">
+  <div class="wrap">
+    <p class="kicker">Thoughts</p>
+    <h2 class="sec reveal">Writing on AI,<br>aviation &amp; product</h2>
+    <div class="tcards" id="tcards"></div>
+  </div>
+</section>
+
+<!-- MEDIA / PROOF -->
+<section class="trusted" aria-label="Publications and media">
+  <div class="wrap">
+    <p class="kicker">Publications &amp; media</p>
+    <div class="tcards reveal" style="margin-top:6vh">
+      <div class="tcard"><span class="cat">Research publication</span><h3>Fast Approximate Eyelid Detection for Periocular Localization</h3><p>Peer-reviewed computer vision research — where my AI journey started before it became products.</p></div>
+      <div class="tcard"><span class="cat">Community</span><h3>21,000+ on LinkedIn</h3><p>Writing about enterprise AI, analytics leadership and product craft for a growing audience of practitioners.</p><a class="rd" href="https://www.linkedin.com/in/neerajprakash27" style="color:var(--accent);text-decoration:none">Follow →</a></div>
+      <div class="tcard"><span class="cat">Speaking</span><h3>Talks &amp; panels</h3><p>Enterprise AI adoption, airport digital transformation, and building data products that executives actually use.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testi">
+  <div class="wrap">
+    <p class="kicker">What colleagues say</p>
+    <div class="tsgrid" id="tsgrid"></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <h2 class="sec">Let's build<br><span class="hollow">something meaningful</span></h2>
+  <p>Open to leadership roles in AI Product Management, Analytics and Digital Transformation.</p>
   <div class="btns">
-    <a class="btn solid" id="btnHire" href="#">Hire me</a>
-    <a class="btn ghost" id="btnCall" href="#">Book a call</a>
+    <a class="btn solid magnetic" href="Neeraj-Prakash-Resume.pdf" download>Download Resume</a>
+    <a class="btn ghost magnetic" href="mailto:neeprkash@outlook.com?subject=Meeting%20request">Schedule Meeting</a>
+    <a class="btn ghost magnetic" href="mailto:neeprkash@outlook.com">Email Me</a>
+    <a class="btn ghost magnetic" href="https://www.linkedin.com/in/neerajprakash27" target="_blank" rel="noopener">LinkedIn</a>
   </div>
 </section>
+</main>
 
 <footer>
-  <span id="footerCopy"></span>
-  <div class="socials" id="socials"></div>
+  <div class="wrap">
+    <div class="cols">
+      <div class="brand">NEERAJ PRAKASH</div>
+      <nav class="f" aria-label="Footer">
+        <a href="Neeraj-Prakash-Resume.pdf" download>Resume</a><a href="#products">Projects</a><a href="#thoughts">Blog</a>
+        <a href="#contact">Contact</a><a href="https://www.linkedin.com/in/neerajprakash27" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:neeprkash@outlook.com">Email</a>
+      </nav>
+    </div>
+    <div class="cp">© <span id="yr"></span> Neeraj Prakash — Building AI products that transform how enterprises make decisions.</div>
+  </div>
 </footer>
+
+<!-- CASE STUDY OVERLAY -->
+<div id="csOverlay" role="dialog" aria-modal="true" aria-label="Case study">
+  <div id="csPanel"></div>
+</div>
 
 <script src="assets/vendor/gsap.min.js"></script>
 <script src="assets/vendor/ScrollTrigger.min.js"></script>
 <script>
-/* CDN fallback if local vendor files are missing */
 if (typeof gsap === 'undefined') document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"><\/script><script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"><\/script>');
 </script>
 <script>
-/* ================= CONFIG — EDIT EVERYTHING HERE ================= */
-const CONFIG = {
-  name: "NEERAJ PRAKASH",
-  kicker: "Senior AI Product & Analytics Leader",
-  subtitle: 'I turn <span class="accent">AI and data</span> into measurable business impact — across aviation, SaaS, e-commerce and BFSI.',
-  stats: [
-    {value: 10,  prefix: "",  suffix: "+",   label: "Years of experience"},
-    {value: 500, prefix: "₹", suffix: "Cr+", label: "Business impact driven"},
-    {value: 3000,prefix: "",  suffix: "+",   label: "Enterprise users enabled"},
-    {value: 35,  prefix: "",  suffix: "%",   label: "Faster decisions via EKO AI"}
-  ],
-  pillars: [
-    {title: "AI Product Leadership", desc: "Built and launched EKO, an AI-powered ChatGPT platform at Bangalore International Airport — cutting decision cycle time by 35%, lifting passenger satisfaction by 13% and reducing costs by 7%."},
-    {title: "Commercial & Retail Analytics", desc: "Leading commercial analytics across duty-free, retail and F&B — passenger segmentation, dynamic pricing and real-time revenue dashboards that shape GTM, promotions and leasing strategy."},
-    {title: "Data & Digital Transformation", desc: "From predictive models and automated BI at Amazon to SaaS analytics adoption for 3,000+ enterprise users at Bidgely — grounded in IIT Ropar AI and IIM Visakhapatnam product strategy."}
-  ],
-  projects: [
-    {tag: "SaaS / Product", title: "Xyrenis", pitch: "AI that predicts customer churn before it happens — predict, explain, prevent. Cinematic landing page built end-to-end.", url: "/xyrenis/"},
-    {tag: "AI / Simulation", title: "Duty Free Digital Twin", pitch: "Digital twin of airport duty-free operations — simulating demand, pricing and passenger flow so commercial decisions are tested before they hit the floor."},
-    {tag: "Analytics", title: "Retail Analytics", pitch: "Passenger profile-based retail targeting engine and real-time revenue dashboard suite across duty-free, retail and F&B."}
-  ],
-  finaleSub: "Open to leadership roles in Analytics, Data Product Management and Digital Transformation.",
-  email: "neeprkash@outlook.com",
-  bookCallUrl: "mailto:neeprkash@outlook.com?subject=Let's%20talk",
-  socials: [
-    {label: "LinkedIn", url: "https://www.linkedin.com/in/neerajprakash27"},
-    {label: "GitHub",   url: "https://github.com/"},
-    {label: "X",        url: "https://x.com/"}
-  ]
-};
-/* ================================================================= */
+/* ================= DATA ================= */
+const METRICS = [
+  {v:11, suf:"+", l:"Years experience"}, {v:6, suf:"+", l:"AI products"},
+  {v:21, suf:"K+", l:"LinkedIn audience"}, {v:500, pre:"₹", suf:"Cr+", l:"Commercial decisions enabled"},
+  {v:3000, suf:"+", l:"Enterprise users"}, {v:35, suf:"%", l:"Faster decision making"}
+];
 
-/* --- populate (runs regardless of GSAP availability) --- */
-const nameEl = document.getElementById('heroName');
-const words = CONFIG.name.split(' ');
-nameEl.innerHTML = words.map(w =>
-  `<span class="ln">${[...w].map(c => `<span class="ch">${c}</span>`).join('')}</span>`
-).join('');
-document.getElementById('heroKicker').textContent = CONFIG.kicker;
-document.getElementById('heroSub').innerHTML = CONFIG.subtitle;
-document.getElementById('statsGrid').innerHTML = CONFIG.stats.map(s =>
-  `<div class="stat"><div class="num">${s.prefix ? `<sup>${s.prefix}</sup>` : ''}<span class="count" data-v="${s.value}">0</span><sup>${s.suffix}</sup></div><div class="lbl">${s.label}</div></div>`
-).join('');
-document.getElementById('pillarsList').innerHTML = CONFIG.pillars.map((p,i) =>
-  `<div class="pillar"><div class="idx">0${i+1}</div><h3>${p.title}</h3><p>${p.desc}</p></div>`
-).join('');
-document.getElementById('cards').innerHTML = CONFIG.projects.map(p => {
-  const inner = `<div><div class="tag">${p.tag}</div><h3>${p.title}</h3><p>${p.pitch}</p></div><div class="arrow">${p.url ? 'View live &rarr;' : '&rarr;'}</div>`;
-  return p.url
-    ? `<a class="card" href="${p.url}" style="text-decoration:none;color:inherit">${inner}</a>`
-    : `<div class="card">${inner}</div>`;
-}).join('');
-document.getElementById('finaleSub').textContent = CONFIG.finaleSub;
-document.getElementById('btnHire').href = `mailto:${CONFIG.email}?subject=Hiring%20inquiry`;
-document.getElementById('btnCall').href = CONFIG.bookCallUrl;
-document.getElementById('footerCopy').textContent = `© ${new Date().getFullYear()} ${CONFIG.name.split(' ')[0]} — built to ship`;
-document.getElementById('socials').innerHTML = CONFIG.socials.map(s => `<a href="${s.url}" target="_blank" rel="noopener">${s.label}</a>`).join('');
+const WHY = [
+  ["AI Product Strategy","From capability to P&L: I find where AI changes the economics of a business, then ship the product that proves it."],
+  ["Commercial Analytics","Duty-free, retail, F&B revenue intelligence — segmentation, dynamic pricing and GTM decisions grounded in passenger data."],
+  ["Data Products","Products with a measurement plan before a launch date. If it can't be measured, it doesn't ship."],
+  ["Executive Communication","I translate models into board language: risk, revenue, and the decision being asked for."],
+  ["Enterprise AI","LLM platforms, digital twins and forecasting systems that survive procurement, security review and real users."],
+  ["Product Discovery","Problems first. I interview operators, walk the floor, and kill weak ideas before they cost a quarter."],
+  ["Stakeholder Management","Operations, finance, IT, vendors, regulators — enterprise products die in the seams; I own the seams."],
+  ["Roadmapping","Sequenced bets with explicit tradeoffs — what we sacrifice, what we measure, when we stop."]
+];
 
-/* --- hero image fallback --- */
-const heroImg = document.getElementById('heroImg');
-heroImg.onerror = () => {
-  document.getElementById('heroImgWrap').style.display = 'none';
-  document.getElementById('heroFallback').style.display = 'block';
-};
+const THOUGHTS = [
+  ["AI in Aviation","How AI is quietly rewiring airports","From passenger flow to non-aero revenue: where AI actually pays off in aviation, and where it's still theatre."],
+  ["Airport Retail","The future of airport retail is a model","Duty-free is a prediction problem. Passenger mix in, revenue per square metre out."],
+  ["Digital Twins","Digital twins that earn their keep","Simulation is cheap. Decisions are expensive. How to build twins that change what leaders do on Monday."],
+  ["Product Management","PM lessons from the airport floor","What operations teaches you that frameworks can't — 11 years of enterprise product scar tissue."],
+  ["Enterprise AI","Why enterprise AI products fail","It's never the model. It's trust, workflow and the last mile of adoption."]
+];
 
-/* --- graceful degradation: if GSAP failed to load, show everything --- */
-if (typeof gsap === 'undefined') {
-  document.querySelectorAll('.hero-title .ch').forEach(c => c.style.transform = 'none');
-  document.querySelector('.hero-sub').style.opacity = 1;
-  document.querySelectorAll('.pillar,.card').forEach(el => { el.style.opacity = 1; el.style.transform = 'none'; });
-  document.querySelectorAll('.count').forEach(el => el.textContent = el.dataset.v);
-  throw new Error('GSAP unavailable — static fallback rendered');
+const TESTIMONIALS = [
+  ["Neeraj doesn't bring you a dashboard — he brings you the decision, the confidence interval, and what it costs to be wrong.","[Name] — VP Commercial, Aviation"],
+  ["EKO changed how our teams work. What used to take a week of analyst back-and-forth now takes a question.","[Name] — Operations Leader, BIAL"],
+  ["One of the rare product people who is equally credible with data scientists and CXOs.","[Name] — Product Leader, SaaS"]
+];
+/* NOTE: testimonial names are placeholders — replace with real quotes before production. */
+
+const PRODUCTS = [
+ {tag:"Enterprise AI Platform", name:"Xyrenis", sub:"AI project management for enterprise delivery", role:"Founder / Product Lead", dur:"2025 — present",
+  problem:"Enterprise programs fail quietly: status lives in decks, risk lives in people's heads, and leadership finds out last.",
+  solution:"An AI project management platform that reads delivery signals — tickets, timelines, dependencies — and surfaces the risks and decisions that need leadership attention now.",
+  impact:"Live concept product; landing experience shipped, platform in development.",
+  tech:"LLM orchestration · predictive risk scoring · integrations",
+  cs:{research:"Interviewed program leaders across IT services and aviation: the common failure wasn't planning, it was latency — bad news travelling too slowly.",
+      architecture:"Signal ingestion from delivery tools → risk model → LLM explanation layer → executive brief. Human owns every decision; AI owns the noticing.",
+      execution:"Started with the narrative layer (why a program is at risk, in plain language) rather than another Gantt view.",
+      metrics:[["Concept → live","6 wks"],["Signals modelled","20+"]],
+      businessImpact:"Positions AI where enterprises bleed most: program overruns measured in crores, caught weeks earlier.",
+      lessons:"Executives don't want prediction accuracy — they want defensible early warnings. Explanation beats precision.",
+      future:"Pilot with two delivery organizations; expand from risk detection to automated mitigation playbooks.",
+      demo:"/xyrenis/"}},
+ {tag:"Enterprise AI · GenAI", name:"EKO", sub:"Enterprise ChatGPT for Bangalore International Airport", role:"Senior Manager, Product Strategy & Analytics", dur:"2023 — 2025",
+  problem:"Airport decisions crawled through analyst queues — operations, finance and commercial teams waited days for answers that lived in the data all along.",
+  solution:"An AI-powered internal ChatGPT platform giving every team real-time, self-serve answers over airport data — governed, auditable, and in plain language.",
+  impact:"35% faster decision cycles · +9% operational efficiency · +13% passenger satisfaction · −7% cost",
+  tech:"LLM platform · real-time analytics · enterprise governance",
+  cs:{research:"Shadowed operations and commercial teams; measured decision latency from question to answer. The bottleneck was never data — it was access.",
+      architecture:"Governed data layer → retrieval + LLM answer engine → role-based access → audit trail. Built for an environment where a wrong answer has operational consequences.",
+      execution:"Launched with high-frequency operational questions first to build trust, then expanded to commercial and finance use cases.",
+      metrics:[["Decision cycle","−35%"],["Efficiency","+9%"],["Passenger CSAT","+13%"],["Cost","−7%"]],
+      businessImpact:"Changed the operating rhythm of one of the world's best airports: decisions moved from weekly reviews to same-day.",
+      lessons:"Enterprise GenAI succeeds on governance and trust, not model choice. Adoption followed the first team that publicly won with it.",
+      future:"Deeper agentic workflows — from answering questions to executing the follow-up."}},
+ {tag:"AI · Simulation", name:"Duty Free Digital Twin", sub:"Simulating airport retail before decisions hit the floor", role:"Senior AI Product & Analytics Manager", dur:"2025 — present",
+  problem:"Duty-free decisions — pricing, layout, promotions — were placed like bets: expensive to test live, impossible to undo.",
+  solution:"A digital twin of duty-free operations simulating passenger flow, demand and pricing scenarios, so commercial teams test decisions in silico first.",
+  impact:"Scenario testing for crore-scale commercial decisions across duty-free, part of BIAL's non-aero revenue strategy.",
+  tech:"Demand forecasting · passenger-flow simulation · scenario engines",
+  cs:{research:"Mapped the commercial decision calendar: which decisions recur, what each costs when wrong, and which had zero pre-testing today.",
+      architecture:"Passenger mix forecasts feed a flow + conversion simulation; pricing and layout scenarios run against it; outputs ranked by revenue impact and confidence.",
+      execution:"Started with the highest-stakes recurring decision — promotion planning against flight schedules — to prove value in one quarter.",
+      metrics:[["Decision types simulated","5+"],["Revenue scope","₹100Cr+"]],
+      businessImpact:"Moves commercial strategy from intuition to simulation — every major decision arrives at the table pre-tested.",
+      lessons:"A twin is only trusted when its baseline predictions are publicly checked against reality. Calibration is the product.",
+      future:"Extend from duty-free to F&B and the full non-aero portfolio."}},
+ {tag:"Analytics Platform", name:"Retail Analytics Platform", sub:"Passenger-profile retail intelligence for BIAL", role:"Senior AI Product & Analytics Manager", dur:"2024 — present",
+  problem:"Airport retail decisions were made on aggregate footfall — blind to who the passengers actually were and what they'd buy.",
+  solution:"A passenger profile-based retail targeting engine and real-time revenue dashboard suite across duty-free, retail and F&B.",
+  impact:"Informs GTM, promotions and leasing strategy across the commercial portfolio; part of ₹500Cr+ decision enablement.",
+  tech:"Segmentation models · dynamic pricing inputs · real-time dashboards",
+  cs:{research:"Joined vendor and concessionaire reviews to see which questions recurred — then built the answers into the product instead of the meeting.",
+      architecture:"Passenger segmentation engine → targeting layer → real-time revenue suite consumed by commercial leadership and concessionaires.",
+      execution:"Shipped the dashboard suite first for credibility, then layered targeting — analytics people watch before analytics people trust.",
+      metrics:[["Commercial segments","Duty-free · Retail · F&B"],["Decisions informed","GTM · Pricing · Leasing"]],
+      businessImpact:"Concessionaire conversations moved from opinion to evidence; leasing and promotion decisions carry data into the room.",
+      lessons:"In B2B2C environments the real user is the partner. Build for the concessionaire's Monday meeting, not the analyst's notebook.",
+      future:"Closed-loop measurement: every targeting decision graded against realized revenue."}},
+ {tag:"AI · Operations", name:"Airport Queue Intelligence", sub:"Predicting passenger flow before it becomes a queue", role:"Senior Manager, Product Strategy & Analytics", dur:"2023 — 2025",
+  problem:"Queues are the airport experience. Reacting to them after they form costs satisfaction scores, missed flights and staff overtime.",
+  solution:"AI-driven operational dashboards forecasting passenger flow by hour and touchpoint, letting operations pre-position staff and open lanes before pressure builds.",
+  impact:"+9% operational efficiency · contributor to +13% passenger satisfaction improvement",
+  tech:"Flow forecasting · operational dashboards · alerting",
+  cs:{research:"Analyzed historical flow against flight schedules, seasonality and events; the patterns were predictable — the staffing wasn't.",
+      architecture:"Schedule + historical flow models → touchpoint-level forecasts → operational dashboard with threshold alerts.",
+      execution:"Piloted at security screening, the highest-pain touchpoint, then expanded to check-in and immigration.",
+      metrics:[["Efficiency","+9%"],["CSAT contribution","+13%"]],
+      businessImpact:"Fewer escalations, calmer terminals, and staffing decisions made hours ahead instead of minutes behind.",
+      lessons:"Operations adopts tools that respect their expertise — forecasts framed as 'heads-up', never 'orders'.",
+      future:"Feed queue intelligence into the commercial stack: dwell time is revenue."}},
+ {tag:"Healthcare AI · Concept", name:"MedHover", sub:"AI decision support concept for healthcare operations", role:"Product Lead (concept)", dur:"In development",
+  problem:"Healthcare operations drown in the same decision latency as airports — critical signals buried in systems nobody has time to query.",
+  solution:"A decision-support concept applying the EKO playbook to healthcare operations: plain-language answers over operational data, governed for a clinical environment.",
+  impact:"Concept stage — applying proven enterprise AI patterns to a new regulated domain.",
+  tech:"LLM answer engine · operational analytics · governance-first design",
+  cs:{research:"Pattern-matching from aviation: both domains are 24/7 operations where decision latency has human cost and governance is non-negotiable.",
+      architecture:"Same governed retrieval-and-explain architecture as EKO, redesigned for clinical data sensitivity and audit requirements.",
+      execution:"Currently validating the problem with healthcare operations leaders before a line of product code.",
+      metrics:[["Stage","Discovery"],["Domain","Healthcare ops"]],
+      businessImpact:"Target: the operational decisions around care — staffing, flow, capacity — where minutes and margins are lost.",
+      lessons:"Discovery discipline: the fastest way to waste a year is porting a solution before validating the problem.",
+      future:"Pilot partner selection; governance framework first, features second."}}
+];
+
+/* ================= RENDER ================= */
+document.getElementById('yr').textContent = new Date().getFullYear();
+document.getElementById('statsGrid').innerHTML = METRICS.map(m =>
+  `<div class="stat"><div class="num">${m.pre?`<sup>${m.pre}</sup>`:''}<span class="count" data-v="${m.v}">0</span><sup>${m.suf}</sup></div><div class="lbl">${m.l}</div></div>`).join('');
+document.getElementById('wgrid').innerHTML = WHY.map(w =>
+  `<div class="wcard reveal"><h3>${w[0]}</h3><p>${w[1]}</p></div>`).join('');
+document.getElementById('tcards').innerHTML = THOUGHTS.map(t =>
+  `<a class="tcard reveal" href="https://www.linkedin.com/in/neerajprakash27" target="_blank" rel="noopener"><span class="cat">${t[0]}</span><h3>${t[1]}</h3><p>${t[2]}</p><div class="rd">Read on LinkedIn →</div></a>`).join('');
+document.getElementById('tsgrid').innerHTML = TESTIMONIALS.map(t =>
+  `<div class="ts reveal"><p class="q">${t[0]}</p><p class="who"><b>${t[1].split('—')[0]}</b>— ${t[1].split('—')[1]}</p></div>`).join('');
+
+document.getElementById('pcards').innerHTML = PRODUCTS.map((p,i) =>
+  `<article class="pcard reveal">
+    <span class="tag">${p.tag}</span><h3>${p.name}</h3><div class="sub">${p.sub}</div>
+    <dl>
+      <dt>Problem</dt><dd>${p.problem}</dd>
+      <dt>Solution</dt><dd>${p.solution}</dd>
+      <dt>Business impact</dt><dd>${p.impact}</dd>
+    </dl>
+    <div class="meta"><span>${p.role}</span><span>${p.dur}</span></div>
+    <button class="cs-btn" data-i="${i}" aria-haspopup="dialog">View Case Study</button>
+  </article>`).join('');
+
+/* dashboard-style inline SVG "screenshot" per product (no image weight) */
+function shotSVG(p){
+  return `<svg viewBox="0 0 720 300" role="img" aria-label="${p.name} product visual" xmlns="http://www.w3.org/2000/svg">
+    <rect width="720" height="300" fill="#0A0908"/>
+    <rect x="24" y="22" width="150" height="12" rx="6" fill="rgba(236,230,216,.25)"/>
+    <rect x="24" y="52" width="672" height="1" fill="rgba(236,230,216,.12)"/>
+    ${[0,1,2].map(i=>`<rect x="${24+i*230}" y="72" width="212" height="64" rx="8" fill="rgba(236,230,216,.05)" stroke="rgba(236,230,216,.12)"/>
+      <rect x="${40+i*230}" y="88" width="70" height="8" rx="4" fill="rgba(236,230,216,.25)"/>
+      <rect x="${40+i*230}" y="104" width="${100-i*18}" height="14" rx="4" fill="${i===0?'#E1502A':'rgba(236,230,216,.5)'}"/>`).join('')}
+    <polyline points="24,250 120,240 210,244 300,224 390,214 480,190 570,175 696,150" fill="none" stroke="#E1502A" stroke-width="2.5"/>
+    <circle cx="480" cy="190" r="5" fill="#E1502A"/>
+    <rect x="24" y="160" width="672" height="1" fill="rgba(236,230,216,.08)"/>
+  </svg>`;
 }
-gsap.registerPlugin(ScrollTrigger);
 
-/* --- hero cinematic scrub (orbit feel: 3D yaw + scale + light sweep) --- */
-const heroTl = gsap.timeline({
-  scrollTrigger: {trigger: '.hero', start: 'top top', end: 'bottom bottom', scrub: 0.7}
+/* case study overlay */
+const ov = document.getElementById('csOverlay'), panel = document.getElementById('csPanel');
+let lastFocus = null;
+function openCS(i){
+  const p = PRODUCTS[i], c = p.cs;
+  panel.innerHTML = `
+    <button class="close" aria-label="Close case study">✕</button>
+    <span class="tag">${p.tag}</span><h3>${p.name}</h3><div class="sub">${p.sub}</div>
+    <div class="meta"><span>${p.role}</span><span>${p.dur}</span></div>
+    <div class="shot">${shotSVG(p)}</div>
+    <h4>Problem</h4><p>${p.problem}</p>
+    <h4>Research</h4><p>${c.research}</p>
+    <h4>Solution</h4><p>${p.solution}</p>
+    <h4>Architecture</h4><p>${c.architecture}</p>
+    <h4>Execution</h4><p>${c.execution}</p>
+    <h4>Metrics</h4><div class="mrow">${c.metrics.map(m=>`<div class="m"><div class="v">${m[1]}</div><div class="k">${m[0]}</div></div>`).join('')}</div>
+    <h4>Business impact</h4><p>${c.businessImpact}</p>
+    <h4>Lessons learned</h4><p>${c.lessons}</p>
+    <h4>Future vision</h4><p>${c.future}</p>
+    ${c.demo?`<p style="margin-top:30px"><a class="btn solid" href="${c.demo}">Open live demo →</a></p>`:''}`;
+  lastFocus = document.activeElement;
+  ov.classList.add('on'); document.body.style.overflow='hidden';
+  if(window.gsap) gsap.fromTo(panel,{x:'100%'},{x:'0%',duration:.55,ease:'power3.out'});
+  else panel.style.transform='none';
+  panel.querySelector('.close').focus();
+  panel.querySelector('.close').onclick = closeCS;
+}
+function closeCS(){
+  const done=()=>{ov.classList.remove('on');document.body.style.overflow='';if(lastFocus)lastFocus.focus();};
+  if(window.gsap) gsap.to(panel,{x:'100%',duration:.4,ease:'power3.in',onComplete:done}); else done();
+}
+ov.addEventListener('click', e=>{ if(e.target===ov) closeCS(); });
+addEventListener('keydown', e=>{ if(e.key==='Escape'&&ov.classList.contains('on')) closeCS(); });
+document.getElementById('pcards').addEventListener('click', e=>{
+  const b = e.target.closest('.cs-btn'); if(b) openCS(+b.dataset.i);
 });
-heroTl
-  .fromTo('#heroImgWrap', {scale: 1.18, rotationY: -7, transformPerspective: 1200},
-    {scale: 1.0, rotationY: 7, ease: 'none'}, 0)
-  .fromTo('#heroSweep', {'--sx': '15%'}, {'--sx': '85%', ease: 'none'}, 0)
-  .to('.hero-title', {yPercent: -30, ease: 'none'}, 0)
-  .to('.scroll-hint', {opacity: 0}, 0);
 
-/* letters track in */
-gsap.to('.hero-title .ch', {
-  y: 0, stagger: 0.045, ease: 'power4.out', duration: 1.1, delay: 0.25
-});
-gsap.to('.hero-kicker', {opacity: 1, duration: 0.8, delay: 0.15});
-gsap.to('.hero-sub', {opacity: 1, duration: 1.2, delay: 1.1});
+/* hero headline split */
+const H1 = [["Building AI Products",0],["that move millions of passengers",0],["and hundreds of crores.",1]];
+document.getElementById('heroName').innerHTML = H1.map(([line,hl]) =>
+  `<span class="ln">${line.split(' ').map(w =>
+    `<span style="display:inline-block;white-space:nowrap">${[...w].map(ch=>`<span class="ch${hl?' hl':''}">${ch}</span>`).join('')}</span>`
+  ).join(' ')}</span>`).join('');
 
-/* progress bar */
-gsap.to('#progress', {width: '100%', ease: 'none',
-  scrollTrigger: {trigger: document.body, start: 'top top', end: 'bottom bottom', scrub: 0.3}});
+/* ================= ANIMATION ================= */
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+function staticFallback(){
+  document.querySelectorAll('.reveal,.hero-sub,.hero-cos,.hero-kicker').forEach(el=>{el.style.opacity=1;el.style.transform='none'});
+  document.querySelectorAll('.hero-title .ch').forEach(c=>c.style.transform='none');
+  document.querySelectorAll('.count').forEach(el=>el.textContent=(+el.dataset.v).toLocaleString());
+  const l=document.getElementById('loader'); if(l) l.remove();
+}
+if (typeof gsap === 'undefined' || reduced) { staticFallback(); }
+else {
+  gsap.registerPlugin(ScrollTrigger);
 
-/* --- stats count up --- */
-document.querySelectorAll('.count').forEach(el => {
-  const v = +el.dataset.v;
-  ScrollTrigger.create({
-    trigger: el, start: 'top 85%', once: true,
-    onEnter: () => gsap.to(el, {innerText: v, duration: 1.8, snap: {innerText: 1}, ease: 'power2.out'})
+  /* loading sequence */
+  const intro = gsap.timeline({onComplete:()=>document.getElementById('loader').remove()});
+  intro.to('#loader .nm span',{y:0,duration:.7,ease:'power4.out'})
+       .to('#loader .ln',{width:'100%',duration:.7,ease:'power2.inOut'},'<.1')
+       .to('#loader',{yPercent:-100,duration:.7,ease:'power4.inOut',delay:.15});
+
+  /* hero */
+  gsap.timeline({scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom bottom',scrub:.7}})
+    .fromTo('#heroImgWrap',{scale:1.18,rotationY:-7,transformPerspective:1200},{scale:1,rotationY:7,ease:'none'},0)
+    .fromTo('#heroSweep',{'--sx':'15%'},{'--sx':'85%',ease:'none'},0)
+    .to('.hero-title',{yPercent:-24,ease:'none'},0)
+    .to('.scroll-hint',{opacity:0},0);
+  gsap.to('.hero-title .ch',{y:0,stagger:.016,ease:'power4.out',duration:1,delay:1.55});
+  gsap.to('.hero-kicker',{opacity:1,duration:.8,delay:1.45});
+  gsap.to('.hero-sub',{opacity:1,duration:1,delay:2.2});
+  gsap.to('.hero-cos',{opacity:1,duration:1,delay:2.45});
+
+  /* mouse parallax on hero */
+  const hp = document.querySelector('.hero-pin');
+  hp.addEventListener('mousemove', e=>{
+    const r = hp.getBoundingClientRect();
+    gsap.to('#heroImgWrap',{x:(e.clientX-r.width/2)/r.width*22, y:(e.clientY-r.height/2)/r.height*14, duration:.9, ease:'power2.out', overwrite:'auto'});
   });
-});
 
-/* --- pillars reveal + bg parallax --- */
-gsap.utils.toArray('.pillar').forEach((p, i) => {
-  gsap.to(p, {opacity: 1, y: 0, duration: 0.9, ease: 'power3.out',
-    scrollTrigger: {trigger: p, start: 'top 85%', once: true}});
-});
-gsap.to('.pillars-bg img', {yPercent: -12, ease: 'none',
-  scrollTrigger: {trigger: '.pillars', start: 'top bottom', end: 'bottom top', scrub: 0.6}});
+  gsap.to('.progress',{width:'100%',ease:'none',scrollTrigger:{trigger:document.body,start:'top top',end:'bottom bottom',scrub:.3}});
 
-/* --- cards reveal + mouse glow --- */
-gsap.utils.toArray('.card').forEach((c, i) => {
-  gsap.to(c, {opacity: 1, y: 0, duration: 0.9, delay: i * 0.08, ease: 'power3.out',
-    scrollTrigger: {trigger: '.cards', start: 'top 80%', once: true}});
-  c.addEventListener('mousemove', e => {
-    const r = c.getBoundingClientRect();
-    c.style.setProperty('--mx', (e.clientX - r.left) + 'px');
-    c.style.setProperty('--my', (e.clientY - r.top) + 'px');
+  /* counters */
+  document.querySelectorAll('.count').forEach(el=>{
+    ScrollTrigger.create({trigger:el,start:'top 85%',once:true,onEnter:()=>gsap.to(el,{innerText:+el.dataset.v,duration:1.8,snap:{innerText:1},ease:'power2.out',
+      onUpdate:function(){el.innerText=Math.round(this.targets()[0].innerText).toLocaleString();}})});
   });
-});
 
-/* test hook: #s=N scrolls to N*viewportHeight (used for automated visual verification) */
-addEventListener('load', () => {
-  const m = location.hash.match(/#s=([\d.]+)/);
-  if (m) setTimeout(() => scrollTo(0, parseFloat(m[1]) * innerHeight), 300);
-});
+  /* reveals */
+  gsap.utils.toArray('.reveal').forEach(el=>gsap.to(el,{opacity:1,y:0,duration:.95,ease:'power3.out',
+    scrollTrigger:{trigger:el,start:'top 86%',once:true}}));
 
-/* --- finale hollow fill --- */
-gsap.from('.finale h2', {yPercent: 20, opacity: 0, duration: 1, ease: 'power3.out',
-  scrollTrigger: {trigger: '.finale', start: 'top 70%', once: true}});
+  /* timeline fill */
+  gsap.to('#tlFill',{height:'100%',ease:'none',scrollTrigger:{trigger:'.tl',start:'top 70%',end:'bottom 60%',scrub:.5}});
+
+  /* philosophy lines brighten */
+  gsap.utils.toArray('.philosophy .line').forEach(l=>{
+    ScrollTrigger.create({trigger:l,start:'top 70%',onEnter:()=>l.style.color='var(--cream)'});
+  });
+
+  /* magnetic buttons */
+  document.querySelectorAll('.magnetic').forEach(b=>{
+    b.addEventListener('mousemove', e=>{
+      const r=b.getBoundingClientRect();
+      gsap.to(b,{x:(e.clientX-r.left-r.width/2)*.25,y:(e.clientY-r.top-r.height/2)*.35,duration:.4});
+    });
+    b.addEventListener('mouseleave', ()=>gsap.to(b,{x:0,y:0,duration:.5,ease:'elastic.out(1,.5)'}));
+  });
+
+  /* card hover light */
+  document.querySelectorAll('.pcard').forEach(c=>c.addEventListener('mousemove',e=>{
+    const r=c.getBoundingClientRect();
+    c.style.setProperty('--mx',(e.clientX-r.left)+'px'); c.style.setProperty('--my',(e.clientY-r.top)+'px');
+  }));
+}
+
+/* test hook: #s=N scrolls to N*viewportHeight */
+addEventListener('load', ()=>{ const m=location.hash.match(/#s=([\d.]+)/); if(m) setTimeout(()=>scrollTo(0,parseFloat(m[1])*innerHeight),300); });
 </script>
 </body>
 </html>
