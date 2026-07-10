@@ -325,7 +325,7 @@ footer .cp{margin-top:34px;font-size:12px;color:var(--mut2)}
     <p class="kicker">Publications &amp; media</p>
     <div class="tcards reveal" style="margin-top:6vh">
       <div class="tcard"><span class="cat">Research publication</span><h3>Fast Approximate Eyelid Detection for Periocular Localization</h3><p>Peer-reviewed computer vision research — where my AI journey started before it became products.</p></div>
-      <div class="tcard"><span class="cat">Community</span><h3>21,000+ on LinkedIn</h3><p>Writing about enterprise AI, analytics leadership and product craft for a growing audience of practitioners.</p><a class="rd" href="https://www.linkedin.com/in/neerajprakash27" style="color:var(--accent);text-decoration:none">Follow →</a></div>
+      <div class="tcard"><span class="cat">Community</span><h3>23,000+ on LinkedIn</h3><p>Writing about enterprise AI, analytics leadership and product craft for a growing audience of practitioners.</p><a class="rd" href="https://www.linkedin.com/in/neerajprakash27" style="color:var(--accent);text-decoration:none">Follow →</a></div>
       <div class="tcard"><span class="cat">Speaking</span><h3>Talks &amp; panels</h3><p>Enterprise AI adoption, airport digital transformation, and building data products that executives actually use.</p></div>
     </div>
   </div>
@@ -402,6 +402,9 @@ const WHY = [
   ["Digital Transformation","Not tools rollouts: operating-model change, measured in decision speed and revenue, sponsored at the top."]
 ];
 
+/* Add a specific post URL as the 4th field to link a card to that post.
+   Cards without a URL open the LinkedIn activity feed. */
+const LI_FEED = "https://www.linkedin.com/in/neerajprakash27/recent-activity/all/";
 const THOUGHTS = [
   ["Enterprise AI","Why enterprise AI products fail","It's never the model. It's trust, workflow and the last mile of adoption."],
   ["AI in Aviation","How AI is quietly rewiring airports","From passenger flow to non-aero revenue: where AI actually pays off in aviation, and where it's still theatre."],
@@ -501,7 +504,7 @@ document.getElementById('statsGrid').innerHTML = METRICS.map(m =>
 document.getElementById('wgrid').innerHTML = WHY.map(w =>
   `<div class="wcard reveal"><h3>${w[0]}</h3><p>${w[1]}</p></div>`).join('');
 document.getElementById('tcards').innerHTML = THOUGHTS.map(t =>
-  `<a class="tcard reveal" href="https://www.linkedin.com/in/neerajprakash27" target="_blank" rel="noopener"><span class="cat">${t[0]}</span><h3>${t[1]}</h3><p>${t[2]}</p><div class="rd">Read on LinkedIn →</div></a>`).join('');
+  `<a class="tcard reveal" href="${t[3]||LI_FEED}" target="_blank" rel="noopener"><span class="cat">${t[0]}</span><h3>${t[1]}</h3><p>${t[2]}</p><div class="rd">Read on LinkedIn →</div></a>`).join('');
 document.getElementById('tsgrid').innerHTML = TESTIMONIALS.map(t =>
   `<div class="ts reveal"><p class="q">${t[0]}</p><p class="who"><b>${t[1].split('—')[0]}</b>— ${t[1].split('—')[1]}</p></div>`).join('');
 
