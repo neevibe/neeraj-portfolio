@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "neeraj-portfolio-brown.vercel.app" }],
+      "destination": "https://neerajprakash.vercel.app/$1",
+      "permanent": true
+    }
+  ]
+}
